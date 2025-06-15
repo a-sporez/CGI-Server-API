@@ -1,0 +1,29 @@
+# OS Junk
+.DS_STORE
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# cache
+cache/
+tmp/
+*.cache
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+uploads/
+
+# env
+.env
+config.php
+
+# backup
+.backup/
+*.bak
+*.swp
+*.old

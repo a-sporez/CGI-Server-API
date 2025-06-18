@@ -14,3 +14,15 @@ function create_user($data) {
     $stmt->execute([$data['name'], $data['email']]);
     return get_user(db()->lastInsertId());
 }
+
+function update_user($id, $data) {
+    $stmt = db()->prepare("UPDATE users SET name = ?, email = ? WHERE id = ?");
+    $stmt->execute([$data['name'], $data['email'], $id]);
+    return get_user($id);
+}
+
+function delete_user($id) {
+    $stmt = bd()->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->execute([$id]);
+    return ['deleted' => $id];
+}

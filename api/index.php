@@ -1,6 +1,6 @@
 <?php
 require_once 'lib/response.php';
-require_once 'db/mysql.php';
+require_once 'db/db.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 $path = trim(parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH), '/');

@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+/* ============================================================
+   Root Design Tokens
+   ============================================================ */
+:root {
+    --width: 800px;
+    --font-main: 'Titillium Web', monospace;
+    --font-secondary: 'Titillium Web', monospace;
+    --font-scale: 1.2em;
+    --background-color: #2D2A32;
+    --heading-color: #A390F0;
+    --text-color: #A9F9A8;
+    --link-color: #A9F9A8;
+    --visited-color: #7A5EA7;
+    --code-background-color: #3E3947;
+    --code-color: #A9F9A8;
+    --blockquote-color: #433B51;
+}
+
+/* ============================================================
+   Base Typography & Layout
+   ============================================================ */
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: center;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+}
+
+a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   Content Wrapper - Centered blog or article box
+   ============================================================ */
+.content-box {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 40px;
+    border: 1px solid var(--link-color);
+    background-color: var(--code-background-color);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   Text Utilities
+   ============================================================ */
+strong, b {
+    color: var(--heading-color);
+}
+
+button {
+    margin: 0;
+    cursor: pointer;
+}
+
+.inline {
+    width: auto !important;
+}
+
+.post-body {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* ============================================================
+   Code & Highlighted Sections
+   ============================================================ */
+code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+}
+
+.code-frame,
+.code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+.code-frame {
+    border-left: 5px solid var(--heading-color);
+}
+
+/* ============================================================
+   Blockquotes
+   ============================================================ */
+blockquote {
+    border-top: 1px solid var(--heading-color);
+    border-bottom: 1px solid var(--heading-color);
+    color: var(--text-color);
+    padding: 20px;
+    font-style: bold;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+    padding: 25px 0;
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* ============================================================
+   Header Block (Post Titles)
+   ============================================================ */
+.header-block:hover {
+    text-decoration: none;
+}
+
+.header-block h1 {
+    font-size: 1em;
+    padding: 5px 10px;
+    background: var(--heading-color);
+    color: var(--background-color);
+    display: inline-block;
+    font-weight: 400;
+}
+
+/* ============================================================
+   Blog Post List (Listing Component)
+   ============================================================ */
+ul.post-list {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.post-list li {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+ul.post-list li time {
+    font-style: normal;
+}
+
+ul.post-list li span {
+    flex: 0 0 130px;
+}
+
+ul.post-list li a:visited {
+    color: var(--visited-color);
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px dashed var(--heading-color);
+    padding: 10px;
+}
+
+/* ============================================================
+   Responsive Adjustments
+   ============================================================ */
+@media only screen and (max-width:767px) {
+    .content-box {
+        padding: 20px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    ul.post-list li {
+        flex-direction: column;
+    }
+
+    ul.post-list li span {
+        flex: unset;
+    }
+}
+
+/* ============================================================
+   Informational Footer Section (Static)
+   ============================================================ */
+.info-footer {
+    text-align: center;
+    padding: 2rem 1rem 4rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-top: 1px dashed var(--heading-color);
+    font-family: var(--font-main);
+}
+
+.info-footer a {
+    color: var(--link-color);
+    display: inline-block;
+    margin: 0.25rem 1rem;
+    text-decoration: underline;
+}
+
+.info-footer a:hover {
+    text-decoration: none;
+    color: var(--heading-color);
+}
+
+/* ============================================================
+   Floating Fixed Countdown Footer (or Alert Bar)
+   ============================================================ */
+.floating-alert {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+    text-shadow: 0 0 2px var(--heading-color);
+    font-size: 1rem;
+    padding: 0.75rem;
+    box-shadow: 0 -2px 10px rgba(169, 249, 168, 0.2);
+    z-index: 999;
+    letter-spacing: 0.5px;
+}

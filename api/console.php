@@ -30,48 +30,48 @@ function prompt() {
                 show_help();
                 break;
 
-            case 'list_users':
+            case 'list users':
                 foreach (get_all_users() as $u) {
                     echo "[{$u['id']}] {$u['name']} <{$u['email']}>\n";
                 }
                 break;
 
-            case 'add_user':
+            case 'add user':
                 if (!$param1 || !$param2) {
-                    echo "Usage: add_user name email";
+                    echo "Usage: add user name email";
                     break;
                 }
                 $user = create_user(['name' => $param1, 'email' => $param2]);
                 echo "Created user #{$user['id']}: {$user['name']} <{$user['email']}>";
                 break;
 
-            case 'delete_user':
+            case 'delete user':
                 if (!$param1) {
-                    echo "Usage: delete_user userID";
+                    echo "Usage: delete user userID";
                     break;
                 }
                 delete_user($param1);
                 echo "Deleted user #$param1";
                 break;
 
-            case 'list_messages':
+            case 'list messages':
                 foreach (get_all_messages() as $m) {
                     echo "[{$m['id']}] {$m['author']} posted: {$m['content']}\n";
                 }
                 break;
 
-            case 'add_message':
+            case 'add message':
                 if (!$param1 || !$param2) {
-                    echo "Usage: add_message author content";
+                    echo "Usage: add message author content";
                     break;
                 }
                 $msg = create_message(['author' => $param1, 'content' => $param2]);
                 echo "Created message #{$msg['id']}";
                 break;
 
-            case 'delete_message':
+            case 'delete message':
                 if (!$param1) {
-                    echo "Usage: delete_message messageID";
+                    echo "Usage: delete message messageID";
                     break;
                 }
                 delete_message($param1);
@@ -93,12 +93,12 @@ function show_help() {
     echo <<<EOD
 Available commands:
     -help
-    list_users
-    add_user
-    delete_user
-    list_messages
-    add_message
-    delete_message
+    list users
+    add user
+    delete user
+    list messages
+    add message
+    delete message
     quit
 EOD;
 }

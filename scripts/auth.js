@@ -1,5 +1,5 @@
 export async function login(username, password) {
-    const res = await fetch('/users.php', {
+    const res = await fetch('./api/routes/users.php', {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password})

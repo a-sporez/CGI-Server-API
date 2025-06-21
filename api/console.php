@@ -1,7 +1,7 @@
 <?php
 require_once 'db/db.php';
 require_once 'models/UserModel.php';
-require_once 'models/MessageModel';
+require_once 'models/MessageModel.php';
 
 function init() {
     echo "API interface initialized. Type -help for a list of commands";

@@ -1,5 +1,5 @@
 export async function fetchUsers() {
-    const res  = await fetch('/users.php');
+    const res  = await fetch('./api/routes/users.php');
     const data = await res.json();
     const list = document.getElementById('userList');
     list.innerHTML = "";

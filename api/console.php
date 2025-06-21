@@ -17,7 +17,7 @@ function prompt() {
     while (true) {
         echo "\n";
         $line = trim(fgets(STDIN));
-        if ($line) continue;
+        if (!$line) continue;
 
         $args    = str_getcsv($line, ' ');
         $command = strtolower($args[0] ?? '');
